@@ -1,0 +1,2 @@
+rootProject.name = 'K8sExample'
+include 'K8sExample'
