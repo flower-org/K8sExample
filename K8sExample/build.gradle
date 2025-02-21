@@ -23,7 +23,7 @@ targetCompatibility = '21'
 
 application {
     mainModule = 'com.stubs'
-    mainClass = 'com.stubs.HelloWorld'
+    mainClass = 'com.flower.k8sexample.VaultExample'
 }
 
 compileJava {
@@ -42,7 +42,6 @@ dependencies {
     annotationProcessor "org.immutables:value:2.9.2"
     annotationProcessor "com.uber.nullaway:nullaway:0.7.9"
 
-    implementation 'com.bettercloud:vault-java-driver:5.1.0'
     implementation 'org.apache.commons:commons-lang3:3.12.0'  // For generating random strings
 
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.0'
@@ -50,6 +49,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-guava:2.13.4'
 
     implementation "org.immutables:value-annotations:2.9.2"
+    implementation "org.json:json:20210307"
 
     implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
     implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
@@ -102,7 +102,7 @@ tasks.withType(JavaCompile) {
     }
 }
 
-shadowJar { manifest { attributes 'Main-Class': 'com.stubs.HelloWorld' } }
+shadowJar { manifest { attributes 'Main-Class': 'com.flower.k8sexample.VaultExample' } }
 
 tasks.named('test') {
     useJUnitPlatform()
@@ -110,6 +110,6 @@ tasks.named('test') {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'com.stubs.HelloWorld'
+        attributes 'Main-Class': 'com.flower.k8sexample.VaultExample'
     }
 }
